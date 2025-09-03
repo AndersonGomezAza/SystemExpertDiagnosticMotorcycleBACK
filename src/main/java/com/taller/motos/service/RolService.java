@@ -10,22 +10,22 @@ import java.util.Optional;
 @Service
 public class RolService {
 
-    private final RolRepository RolRepository;
+    private final RolRepository rolRepository;
 
-    public RolService(RolRepository RolRepository) {
-        this.RolRepository = RolRepository;
+    public RolService(RolRepository rolRepository) {
+        this.rolRepository = rolRepository;
     }
 
     public List<Rol> getAllRols() {
-        return RolRepository.findAll();
+        return rolRepository.findAll();
     }
 
     public Rol saveRol(Rol Rol) {
-        return RolRepository.save(Rol);
+        return rolRepository.save(Rol);
     }
 
     public Rol updateRol(Long id, Rol Rol) {
-        Optional<Rol> RolExistente = RolRepository.findById(id);
+        Optional<Rol> RolExistente = rolRepository.findById(id);
 
         if (RolExistente.isPresent()) {
             Rol u = RolExistente.get();
@@ -36,9 +36,13 @@ public class RolService {
             if (Rol.getDescripcion() != null) {
                 u.setDescripcion(Rol.getDescripcion());
             }
-            return RolRepository.save(u);
+            return rolRepository.save(u);
         } else {
             throw new RuntimeException("Rol no encontrado con id " + id);
         }
+    }
+
+    public void deleteUsuario(Long id){
+        rolRepository.deleteById(id);
     }
 }

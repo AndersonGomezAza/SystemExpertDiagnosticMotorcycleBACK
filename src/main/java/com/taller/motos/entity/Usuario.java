@@ -1,6 +1,9 @@
 package com.taller.motos.entity;
 
 import java.util.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
 
@@ -10,7 +13,7 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idUsuario;
+    private Long id_usuario;
 
     private String nombre_usuario;
     private String email;
@@ -24,11 +27,15 @@ public class Usuario {
     @JoinColumn(name = "id_rol", nullable = false)
     private Rol rol;
 
+    @OneToMany(mappedBy = "usuario")
+    @JsonIgnore
+    private List<Motocicleta> motocicleta;
+
     public Usuario() {}
 
-    public Usuario(Long idUsuario, Rol rol, String nombre_usuario, String email, String password_hash, String telefono,
+    public Usuario(Long id_usuario, Rol rol, String nombre_usuario, String email, String password_hash, String telefono,
             String direccion, Date fecha_registro, Date ultimo_login) {
-        this.idUsuario = idUsuario;
+        this.id_usuario = id_usuario;
         this.nombre_usuario = nombre_usuario;
         this.email = email;
         this.password_hash = password_hash;
@@ -39,12 +46,12 @@ public class Usuario {
         this.rol = rol;
     }
 
-    public Long getIdUsuario() {
-        return idUsuario;
+    public Long getId_usuario() {
+        return id_usuario;
     }
 
-    public void setIdUsuario(Long idUsuario) {
-        this.idUsuario = idUsuario;
+    public void setId_usuario(Long id_usuario) {
+        this.id_usuario = id_usuario;
     }
 
     public Rol getRol() {

@@ -60,4 +60,8 @@ public class UsuarioService {
             throw new RuntimeException("Usuario no encontrado con id " + id);
         }
     }
+
+    public void deleteUsuario(Long id){
+        usuarioRepository.deleteById(id);
+    }
 }
