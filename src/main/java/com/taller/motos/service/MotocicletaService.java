@@ -11,7 +11,7 @@ import com.taller.motos.repository.MotocicletaRepository;
 @Service
 public class MotocicletaService {
     
-    private MotocicletaRepository motocicletaRepository;
+    private final MotocicletaRepository motocicletaRepository;
 
     public MotocicletaService(MotocicletaRepository motocicletaRepository) {
         this.motocicletaRepository = motocicletaRepository;
