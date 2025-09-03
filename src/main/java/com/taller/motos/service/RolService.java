@@ -28,15 +28,15 @@ public class RolService {
         Optional<Rol> RolExistente = rolRepository.findById(id);
 
         if (RolExistente.isPresent()) {
-            Rol u = RolExistente.get();
+            Rol r = RolExistente.get();
 
             if (Rol.getNombre() != null) {
-                u.setNombre(Rol.getNombre());
+                r.setNombre(Rol.getNombre());
             }
             if (Rol.getDescripcion() != null) {
-                u.setDescripcion(Rol.getDescripcion());
+                r.setDescripcion(Rol.getDescripcion());
             }
-            return rolRepository.save(u);
+            return rolRepository.save(r);
         } else {
             throw new RuntimeException("Rol no encontrado con id " + id);
         }

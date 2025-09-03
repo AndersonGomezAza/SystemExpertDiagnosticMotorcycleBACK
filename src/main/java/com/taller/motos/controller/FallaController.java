@@ -1,55 +1,51 @@
 package com.taller.motos.controller;
 
-import com.taller.motos.entity.Sintoma;
-import com.taller.motos.service.SintomaService;
-
 import java.util.List;
 
 import org.springframework.dao.EmptyResultDataAccessException;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
+import com.taller.motos.entity.Falla;
+import com.taller.motos.service.FallaService;
 
 
-
-@CrossOrigin(origins = "https//localhost:4200")
+@CrossOrigin(origins = "https://localhost:4200")
 @RestController
-@RequestMapping("/sintomas")
-public class SintomaController {
+@RequestMapping("/fallas")
+public class FallaController {
     
-    private final SintomaService sintomaService;
+    private final FallaService fallaService;
 
-    public SintomaController(SintomaService sintomaService) {
-        this.sintomaService = sintomaService;
+    public FallaController(FallaService fallaService){
+        this.fallaService = fallaService;
     }
 
-    @GetMapping()
-    public ResponseEntity<?> getSintomas() {
+    @GetMapping
+    public ResponseEntity<?> getFallas() {
         try {
-            List<Sintoma> sintomas = sintomaService.getAllSintomas();
-            return ResponseEntity.ok(sintomas);
+            List<Falla> fallas = fallaService.getAllFalla();
+            return ResponseEntity.ok(fallas);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al  sintomas: " + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error fallas" + e.getMessage());
         }
     }
 
     @PostMapping()
-    public ResponseEntity<?> crearSintoma(@RequestBody Sintoma sintoma) {
+    public ResponseEntity<?> crearFalla(@RequestBody Falla falla) {
         try {
-            Sintoma nuevo = sintomaService.saveSintoma(sintoma);
+            Falla nuevo = fallaService.saveFalla(falla);
             return ResponseEntity.status(HttpStatus.CREATED).body(nuevo);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("Error al  sintoma: " + e.getMessage());
+                    .body("Error al  falla: " + e.getMessage());
         }
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> actualizarSintoma(@PathVariable Long id, @RequestBody Sintoma sintoma) {
+    public ResponseEntity<?> actualizarFalla(@PathVariable Long id, @RequestBody Falla falla) {
         try {
-            Sintoma actualizado = sintomaService.updateSintoma(id, sintoma);
+            Falla actualizado = fallaService.updateFalla(id, falla);
             return ResponseEntity.ok(actualizado);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -61,9 +57,9 @@ public class SintomaController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarSintoma(@PathVariable Long id){
+    public ResponseEntity<?> eliminarFalla(@PathVariable Long id){
         try {
-            sintomaService.deleteSintoma(id);
+            fallaService.deleteFalla(id);
             return ResponseEntity.ok("Usuario eliminado correctamente");
         } catch (EmptyResultDataAccessException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontro el usuario con el id: " + id);
@@ -71,6 +67,5 @@ public class SintomaController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al eliminar usuario: " + e.getMessage());
         }
     }
-    
     
 }
