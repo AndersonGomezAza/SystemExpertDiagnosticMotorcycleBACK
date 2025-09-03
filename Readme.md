@@ -34,11 +34,12 @@ mvn spring-boot:run
 El backend quedará disponible en: http://localhost:8080/
 
 ## Estructura principal del proyecto
+
 src/
 
  └── main/
      
-     ├── java/com/tuusuario/sistemaexperto/
+     ├── java/com/taller/motos/sistemaexperto/
      
      │   ├── controller/   # Controladores REST
      
