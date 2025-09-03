@@ -7,45 +7,46 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.taller.motos.entity.Rol;
-import com.taller.motos.service.RolService;
+import com.taller.motos.entity.Causa;
+import com.taller.motos.service.CausaService;
 
-@CrossOrigin(origins = "http://localhost:4200")
+
+@CrossOrigin(origins = "https://localhost:4200")
 @RestController
-@RequestMapping("/roles")
-public class RolController {
+@RequestMapping("/causas")
+public class CausaController {
     
-    private final RolService rolService;
+    private final CausaService causaService;
 
-    public RolController(RolService rolService) {
-        this.rolService = rolService;
+    public CausaController (CausaService causaService){
+        this.causaService = causaService;
     }
 
     @GetMapping
-    public ResponseEntity<?> getRols() {
+    public ResponseEntity<?> getCausas() {
         try {
-            List<Rol> rols = rolService.getAllRols();
-            return ResponseEntity.ok(rols);
+            List<Causa> causas = causaService.getAllCausas();
+            return ResponseEntity.ok(causas);
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error rols" + e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error causas" + e.getMessage());
         }
     }
 
     @PostMapping()
-    public ResponseEntity<?> crearRol(@RequestBody Rol rol) {
+    public ResponseEntity<?> crearCausa(@RequestBody Causa causa) {
         try {
-            Rol nuevo = rolService.saveRol(rol);
+            Causa nuevo = causaService.saveCausa(causa);
             return ResponseEntity.status(HttpStatus.CREATED).body(nuevo);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                    .body("Error al  rol: " + e.getMessage());
+                    .body("Error al  causa: " + e.getMessage());
         }
     }
 
     @PatchMapping("/{id}")
-    public ResponseEntity<?> actualizarRol(@PathVariable Long id, @RequestBody Rol rol) {
+    public ResponseEntity<?> actualizarCausa(@PathVariable Long id, @RequestBody Causa causa) {
         try {
-            Rol actualizado = rolService.updateRol(id, rol);
+            Causa actualizado = causaService.updateCausa(id, causa);
             return ResponseEntity.ok(actualizado);
         } catch (RuntimeException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND)
@@ -57,9 +58,9 @@ public class RolController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminarRol(@PathVariable Long id){
+    public ResponseEntity<?> eliminarCausa(@PathVariable Long id){
         try {
-            rolService.deleteRol(id);
+            causaService.deleteCausa(id);
             return ResponseEntity.ok("Usuario eliminado correctamente");
         } catch (EmptyResultDataAccessException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontro el usuario con el id: " + id);
@@ -67,4 +68,5 @@ public class RolController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Error al eliminar usuario: " + e.getMessage());
         }
     }
+    
 }

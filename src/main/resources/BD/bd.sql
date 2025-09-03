@@ -1,6 +1,8 @@
 -- =========================================================
 -- CREACIÓN DE BASE DE DATOS
 -- =========================================================
+
+-- BASE DE DATOS PARA POSTGRESQL
 CREATE DATABASE MotosDiagnostic;
 USE DATABASE MotosDiagnostic;
 

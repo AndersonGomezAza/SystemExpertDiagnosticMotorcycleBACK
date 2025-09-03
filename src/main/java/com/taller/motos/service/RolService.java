@@ -42,7 +42,7 @@ public class RolService {
         }
     }
 
-    public void deleteUsuario(Long id){
+    public void deleteRol(Long id){
         rolRepository.deleteById(id);
     }
 }
