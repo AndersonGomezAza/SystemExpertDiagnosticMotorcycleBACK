@@ -35,16 +35,27 @@ El backend quedará disponible en: http://localhost:8080/
 
 ## Estructura principal del proyecto
 src/
+
  └── main/
+     
      ├── java/com/tuusuario/sistemaexperto/
+     
      │   ├── controller/   # Controladores REST
+     
      │   ├── model/        # Entidades (Falla, Causa, Solución)
+     
      │   ├── repository/   # Repositorios JPA
+     
      │   └── service/      # Lógica de negocio (motor de inferencia)
+     
      └── resources/
+     
          ├── application.properties # Configuración
+     
          BD/
+     
          ├── db.sql # Contiene la base de datos
+     
          ├── deep.sql # Contiene datos iniciales de prueba ( opcional )
         
 ## ✨ Autor
