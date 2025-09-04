@@ -22,12 +22,21 @@ CREATE TABLE Usuario (
     id_usuario SERIAL PRIMARY KEY,
     nombre_usuario VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
-    password_hash VARCHAR(255) NOT NULL,    -- Contraseña en hash
+    password_hash VARCHAR(255) NOT NULL,
     telefono VARCHAR(20),
     direccion VARCHAR(255),
     fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    ultimo_login TIMESTAMP,
+    ultimo_login TIMESTAMP
+);
+
+-- =========================================================
+-- TABLA INTERMEDIA ENTRE Usuario Y Roles 
+-- =========================================================
+CREATE TABLE Usuario_Rol (
+    id_usuario_rol SERIAL PRIMARY KEY,
+    id_usuario INT NOT NULL,
     id_rol INT NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario),
     FOREIGN KEY (id_rol) REFERENCES Rol(id_rol)
 );
 
@@ -91,18 +100,51 @@ CREATE TABLE Solucion (
 CREATE TABLE Diagnostico (
     id_diagnostico SERIAL PRIMARY KEY,
     id_moto INT NOT NULL,
-    id_sintoma INT,
-    id_falla INT,
-    id_causa INT,
-    id_solucion INT,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     estado VARCHAR(20) DEFAULT 'pendiente',   -- pendiente, confirmado, solucionado
-    FOREIGN KEY (id_moto) REFERENCES Motocicleta(id_moto),
-    FOREIGN KEY (id_sintoma) REFERENCES Sintoma(id_sintoma),
-    FOREIGN KEY (id_falla) REFERENCES Falla(id_falla),
-    FOREIGN KEY (id_causa) REFERENCES Causa(id_causa),
+    FOREIGN KEY (id_moto) REFERENCES Motocicleta(id_moto)
+);
+
+-- =========================================================
+-- TABLAS INTERMEDIAS DE Diagnostico y las demas estidades
+-- =========================================================
+-- Relación Diagnostico - Sintoma (N:N)
+CREATE TABLE Diagnostico_Sintoma (
+    id_diag_sintoma SERIAL PRIMARY KEY,
+    id_diagnostico INT NOT NULL,
+    id_sintoma INT NOT NULL,
+    FOREIGN KEY (id_diagnostico) REFERENCES Diagnostico(id_diagnostico),
+    FOREIGN KEY (id_sintoma) REFERENCES Sintoma(id_sintoma)
+);
+
+-- Relación Diagnostico - Falla (N:N)
+CREATE TABLE Diagnostico_Falla (
+    id_diag_falla SERIAL PRIMARY KEY,
+    id_diagnostico INT NOT NULL,
+    id_falla INT NOT NULL,
+    FOREIGN KEY (id_diagnostico) REFERENCES Diagnostico(id_diagnostico),
+    FOREIGN KEY (id_falla) REFERENCES Falla(id_falla)
+);
+
+-- Relación Diagnostico - Causa (N:N)
+CREATE TABLE Diagnostico_Causa (
+    id_diag_causa SERIAL PRIMARY KEY,
+    id_diagnostico INT NOT NULL,
+    id_causa INT NOT NULL,
+    FOREIGN KEY (id_diagnostico) REFERENCES Diagnostico(id_diagnostico),
+    FOREIGN KEY (id_causa) REFERENCES Causa(id_causa)
+);
+
+-- Relación Diagnostico - Solucion (N:N)
+CREATE TABLE Diagnostico_Solucion (
+    id_diag_sol SERIAL PRIMARY KEY,
+    id_diagnostico INT NOT NULL,
+    id_solucion INT NOT NULL,
+    FOREIGN KEY (id_diagnostico) REFERENCES Diagnostico(id_diagnostico),
     FOREIGN KEY (id_solucion) REFERENCES Solucion(id_solucion)
 );
+
+
 
 -- =========================================================
 -- TABLA: Regla

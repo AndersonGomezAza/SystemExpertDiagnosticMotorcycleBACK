@@ -1,9 +1,7 @@
 package com.taller.motos.entity;
 
-import java.util.Date;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.time.LocalDateTime;
+import java.util.*;
 
 import jakarta.persistence.*;
 
@@ -13,29 +11,34 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_usuario;
-
+    @Column(name = "id_usuario")
+    private Long idUsuario;
+    @Column(nullable = false, length = 50)
     private String nombre_usuario;
+    @Column(nullable = false, unique = true, length = 100)
     private String email;
+    @Column(nullable = false, length = 255)
     private String password_hash;
+    @Column(length = 20)
     private String telefono;
+    @Column(length = 255)
     private String direccion;
-    private Date fecha_registro;
-    private Date ultimo_login;
-
-    @ManyToOne
-    @JoinColumn(name = "id_rol", nullable = false)
-    private Rol rol;
-
-    @OneToMany(mappedBy = "usuario")
-    @JsonIgnore
-    private List<Motocicleta> motocicleta;
+    @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private java.time.LocalDateTime fecha_registro;
+    private java.time.LocalDateTime ultimo_login;
+    @ManyToMany()
+    @JoinTable(
+        name = "usuario_rol",  // usa tu tabla intermedia existente
+        joinColumns = @JoinColumn(name = "idUsuario"),
+        inverseJoinColumns = @JoinColumn(name = "id_rol")
+    )
+    private Set<Rol> rol = new HashSet<>();
 
     public Usuario() {}
 
-    public Usuario(Long id_usuario, Rol rol, String nombre_usuario, String email, String password_hash, String telefono,
-            String direccion, Date fecha_registro, Date ultimo_login) {
-        this.id_usuario = id_usuario;
+    public Usuario(Long idUsuario, String nombre_usuario, String email, String password_hash, String telefono,
+            String direccion, LocalDateTime fecha_registro, LocalDateTime ultimo_login, Set<Rol> rol) {
+        this.idUsuario = idUsuario;
         this.nombre_usuario = nombre_usuario;
         this.email = email;
         this.password_hash = password_hash;
@@ -47,19 +50,11 @@ public class Usuario {
     }
 
     public Long getId_usuario() {
-        return id_usuario;
+        return idUsuario;
     }
 
-    public void setId_usuario(Long id_usuario) {
-        this.id_usuario = id_usuario;
-    }
-
-    public Rol getRol() {
-        return rol;
-    }
-
-    public void setRol(Rol rol) {
-        this.rol = rol;
+    public void setId_usuario(Long idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getNombre_usuario() {
@@ -102,21 +97,31 @@ public class Usuario {
         this.direccion = direccion;
     }
 
-    public Date getFecha_registro() {
+    public java.time.LocalDateTime getFecha_registro() {
         return fecha_registro;
     }
 
-    public void setFecha_registro(Date fecha_registro) {
+    public void setFecha_registro(java.time.LocalDateTime fecha_registro) {
         this.fecha_registro = fecha_registro;
     }
 
-    public Date getUltimo_login() {
+    public java.time.LocalDateTime getUltimo_login() {
         return ultimo_login;
     }
 
-    public void setUltimo_login(Date ultimo_login) {
+    public void setUltimo_login(java.time.LocalDateTime ultimo_login) {
         this.ultimo_login = ultimo_login;
     }
+
+    public Set<Rol> getRol() {
+        return rol;
+    }
+
+    public void setRol(Set<Rol> rol) {
+        this.rol = rol;
+    }
+
+    
 
     
 }

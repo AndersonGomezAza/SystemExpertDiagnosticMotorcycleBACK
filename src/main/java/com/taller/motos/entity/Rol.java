@@ -15,7 +15,7 @@ public class Rol {
     public String nombre;
     public String descripcion;
 
-    @OneToMany(mappedBy = "rol")
+    @ManyToMany(mappedBy = "rol")
     @JsonIgnore
     private List<Usuario> usuarios;
 

@@ -8,7 +8,8 @@ public class Motocicleta {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id_moto;
+    @Column(name = "id_moto")
+    private Long idMoto;
 
     public String marca; 
     public String modelo;
@@ -25,9 +26,9 @@ public class Motocicleta {
 
     public Motocicleta () {}
 
-    public Motocicleta(Long id_moto, String marca, String modelo, Integer anio, String cilindraje, String tipo_motor,
+    public Motocicleta(Long idMoto, String marca, String modelo, Integer anio, String cilindraje, String tipo_motor,
             String combustible, String placa, String color, Usuario usuario) {
-        this.id_moto = id_moto;
+        this.idMoto = idMoto;
         this.marca = marca;
         this.modelo = modelo;
         this.anio = anio;
@@ -40,11 +41,11 @@ public class Motocicleta {
     }
 
     public Long getId_moto() {
-        return id_moto;
+        return idMoto;
     }
 
-    public void setId_moto(Long id_moto) {
-        this.id_moto = id_moto;
+    public void setId_moto(Long idMoto) {
+        this.idMoto = idMoto;
     }
 
     public String getMarca() {

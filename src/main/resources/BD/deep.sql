@@ -10,64 +10,125 @@ INSERT INTO Rol (nombre, descripcion) VALUES
 -- DATOS DE PRUEBA PARA TABLA: Usuario
 -- =========================================================
 
-INSERT INTO Usuario (nombre_usuario, email, password_hash, telefono, direccion, id_rol) VALUES
+INSERT INTO Usuario (nombre_usuario, email, password_hash, telefono, direccion) VALUES
 -- Admins
-('carlos', 'carlos.admin@example.com', '$2a$10$adminhash1', '3001234567', 'Cra 10 #25-30, Bogotá', 1),
-('laura', 'laura.admin@example.com', '$2a$10$adminhash2', '3109876543', 'Cl 45 #12-50, Medellín', 1),
+('carlos', 'carlos.admin@example.com', '$2a$10$adminhash1', '3001234567', 'Cra 10 #25-30, Bogotá'),
+('laura', 'laura.admin@example.com', '$2a$10$adminhash2', '3109876543', 'Cl 45 #12-50, Medellín'),
 
 -- Mecánicos
-('juan', 'juan.mecanico@example.com', '$2a$10$mechash1', '3125554433', 'Cl 20 #15-10, Cali', 2),
-('sandra', 'sandra.mecanico@example.com', '$2a$10$mechash2', '3004442211', 'Cra 30 #40-22, Barranquilla', 2),
+('juan', 'juan.mecanico@example.com', '$2a$10$mechash1', '3125554433', 'Cl 20 #15-10, Cali'),
+('sandra', 'sandra.mecanico@example.com', '$2a$10$mechash2', '3004442211', 'Cra 30 #40-22, Barranquilla'),
 
 -- Clientes
-('andres', 'andres.perez@example.com', '$2a$10$clientehash1', '3011234567', 'Cra 15 #20-33, Bogotá', 3),
-('maria', 'maria.gomez@example.com', '$2a$10$clientehash2', '3029876543', 'Cl 50 #30-45, Medellín', 3),
-('jose', 'jose.rodriguez@example.com', '$2a$10$clientehash3', '3201122334', 'Cra 18 #5-21, Cali', 3),
-('angela', 'angela.martinez@example.com', '$2a$10$clientehash4', '3214455667', 'Cl 70 #44-32, Bucaramanga', 3),
-('diego', 'diego.suarez@example.com', '$2a$10$clientehash5', '3152233445', 'Cra 22 #33-10, Bogotá', 3),
-('paola', 'paola.ramirez@example.com', '$2a$10$clientehash6', '3008765432', 'Cl 14 #12-60, Cali', 3),
-('esteban', 'esteban.castillo@example.com', '$2a$10$clientehash7', '3113344556', 'Cra 5 #40-80, Medellín', 3),
-('silvia', 'silvia.fernandez@example.com', '$2a$10$clientehash8', '3181122334', 'Cl 100 #20-22, Bogotá', 3),
-('oscar', 'oscar.rios@example.com', '$2a$10$clientehash9', '3175566778', 'Cra 8 #9-44, Barranquilla', 3),
-('adriana', 'adriana.mendoza@example.com', '$2a$10$clientehash10', '3126677889', 'Cl 55 #17-21, Cartagena', 3),
-('julian', 'julian.torres@example.com', '$2a$10$clientehash11', '3191239876', 'Cra 40 #50-10, Bogotá', 3),
-('veronica', 'veronica.lopez@example.com', '$2a$10$clientehash12', '3144455667', 'Cl 11 #8-22, Cali', 3),
-('felipe', 'felipe.ariza@example.com', '$2a$10$clientehash13', '3169988776', 'Cra 21 #30-70, Medellín', 3),
-('carolina', 'carolina.moreno@example.com', '$2a$10$clientehash14', '3206677885', 'Cl 14 #44-60, Bogotá', 3),
-('miguel', 'miguel.santos@example.com', '$2a$10$clientehash15', '3015566777', 'Cra 12 #17-33, Cali', 3),
-('johana', 'johana.vargas@example.com', '$2a$10$clientehash16', '3027788990', 'Cl 33 #21-88, Medellín', 3),
-('ricardo', 'ricardo.marin@example.com', '$2a$10$clientehash17', '3103344552', 'Cra 90 #70-50, Barranquilla', 3),
-('valentina', 'valentina.ospina@example.com', '$2a$10$clientehash18', '3225566774', 'Cl 77 #12-44, Bogotá', 3),
-('sergio', 'sergio.herrera@example.com', '$2a$10$clientehash19', '3119988774', 'Cra 60 #22-30, Cartagena', 3),
-('monica', 'monica.palacios@example.com', '$2a$10$clientehash20', '3156677882', 'Cl 40 #15-10, Cali', 3),
-('daniel', 'daniel.cortes@example.com', '$2a$10$clientehash21', '3131122334', 'Cra 14 #44-50, Medellín', 3),
-('luisa', 'luisa.peña@example.com', '$2a$10$clientehash22', '3174455661', 'Cl 11 #50-60, Bogotá', 3),
-('cristian', 'cristian.guzman@example.com', '$2a$10$clientehash23', '3002211334', 'Cra 33 #21-40, Cali', 3),
-('diana', 'diana.rivera@example.com', '$2a$10$clientehash24', '3129988771', 'Cl 20 #5-12, Bucaramanga', 3),
-('nicolas', 'nicolas.leon@example.com', '$2a$10$clientehash25', '3215566771', 'Cra 12 #60-40, Bogotá', 3),
-('isabel', 'isabel.restrepo@example.com', '$2a$10$clientehash26', '3103344558', 'Cl 33 #70-12, Cali', 3),
-('hugo', 'hugo.vera@example.com', '$2a$10$clientehash27', '3196677881', 'Cra 88 #11-33, Medellín', 3),
-('sandra', 'sandra.cardenas@example.com', '$2a$10$clientehash28', '3024455663', 'Cl 50 #30-22, Bogotá', 3),
-('pedro', 'pedro.salazar@example.com', '$2a$10$clientehash29', '3161122336', 'Cra 5 #77-50, Barranquilla', 3),
-('yolanda', 'yolanda.morales@example.com', '$2a$10$clientehash30', '3187788991', 'Cl 20 #15-80, Cali', 3),
-('jorge', 'jorge.castro@example.com', '$2a$10$clientehash31', '3145566778', 'Cra 12 #33-10, Bogotá', 3),
-('lina', 'lina.murillo@example.com', '$2a$10$clientehash32', '3152233448', 'Cl 66 #10-90, Medellín', 3),
-('osvaldo', 'osvaldo.niño@example.com', '$2a$10$clientehash33', '3171122336', 'Cra 88 #21-12, Cali', 3),
-('patricia', 'patricia.beltran@example.com', '$2a$10$clientehash34', '3196677880', 'Cl 15 #44-22, Bogotá', 3),
-('camilo', 'camilo.gallego@example.com', '$2a$10$clientehash35', '3013344557', 'Cra 10 #33-50, Cartagena', 3),
-('melisa', 'melisa.forero@example.com', '$2a$10$clientehash36', '3125566778', 'Cl 40 #20-88, Bucaramanga', 3),
-('roberto', 'roberto.villalba@example.com', '$2a$10$clientehash37', '3107788993', 'Cra 77 #50-33, Bogotá', 3),
-('natalia', 'natalia.briceno@example.com', '$2a$10$clientehash38', '3202233446', 'Cl 88 #60-21, Cali', 3),
-('edwin', 'edwin.cuellar@example.com', '$2a$10$clientehash39', '3224455664', 'Cra 15 #20-60, Medellín', 3),
-('fabiola', 'fabiola.perez@example.com', '$2a$10$clientehash40', '3199988773', 'Cl 99 #12-33, Barranquilla', 3),
-('andrea', 'andrea.hoyos@example.com', '$2a$10$clientehash41', '3181122337', 'Cra 30 #77-22, Bogotá', 3),
-('tomas', 'tomas.lizcano@example.com', '$2a$10$clientehash42', '3166677884', 'Cl 55 #90-33, Cali', 3),
-('karla', 'karla.cardenas@example.com', '$2a$10$clientehash43', '3151122335', 'Cra 60 #14-22, Medellín', 3),
-('german', 'german.mejia@example.com', '$2a$10$clientehash44', '3174455662', 'Cl 44 #77-10, Bogotá', 3),
-('susana', 'susana.rojas@example.com', '$2a$10$clientehash45', '3017788994', 'Cra 40 #88-22, Cali', 3),
-('alex', 'alex.hurtado@example.com', '$2a$10$clientehash46', '3122233445', 'Cl 20 #66-11, Medellín', 3),
-('marina', 'marina.acevedo@example.com', '$2a$10$clientehash47', '3149988775', 'Cra 22 #14-55, Bogotá', 3),
-('cesar', 'cesar.quintero@example.com', '$2a$10$clientehash48', '3207788996', 'Cl 99 #22-70, Cartagena', 3);
+('andres', 'andres.perez@example.com', '$2a$10$clientehash1', '3011234567', 'Cra 15 #20-33, Bogotá'),
+('maria', 'maria.gomez@example.com', '$2a$10$clientehash2', '3029876543', 'Cl 50 #30-45, Medellín'),
+('jose', 'jose.rodriguez@example.com', '$2a$10$clientehash3', '3201122334', 'Cra 18 #5-21, Cali'),
+('angela', 'angela.martinez@example.com', '$2a$10$clientehash4', '3214455667', 'Cl 70 #44-32, Bucaramanga'),
+('diego', 'diego.suarez@example.com', '$2a$10$clientehash5', '3152233445', 'Cra 22 #33-10, Bogotá'),
+('paola', 'paola.ramirez@example.com', '$2a$10$clientehash6', '3008765432', 'Cl 14 #12-60, Cali'),
+('esteban', 'esteban.castillo@example.com', '$2a$10$clientehash7', '3113344556', 'Cra 5 #40-80, Medellín'),
+('silvia', 'silvia.fernandez@example.com', '$2a$10$clientehash8', '3181122334', 'Cl 100 #20-22, Bogotá'),
+('oscar', 'oscar.rios@example.com', '$2a$10$clientehash9', '3175566778', 'Cra 8 #9-44, Barranquilla'),
+('adriana', 'adriana.mendoza@example.com', '$2a$10$clientehash10', '3126677889', 'Cl 55 #17-21, Cartagena'),
+('julian', 'julian.torres@example.com', '$2a$10$clientehash11', '3191239876', 'Cra 40 #50-10, Bogotá'),
+('veronica', 'veronica.lopez@example.com', '$2a$10$clientehash12', '3144455667', 'Cl 11 #8-22, Cali'),
+('felipe', 'felipe.ariza@example.com', '$2a$10$clientehash13', '3169988776', 'Cra 21 #30-70, Medellín'),
+('carolina', 'carolina.moreno@example.com', '$2a$10$clientehash14', '3206677885', 'Cl 14 #44-60, Bogotá'),
+('miguel', 'miguel.santos@example.com', '$2a$10$clientehash15', '3015566777', 'Cra 12 #17-33, Cali'),
+('johana', 'johana.vargas@example.com', '$2a$10$clientehash16', '3027788990', 'Cl 33 #21-88, Medellín'),
+('ricardo', 'ricardo.marin@example.com', '$2a$10$clientehash17', '3103344552', 'Cra 90 #70-50, Barranquilla'),
+('valentina', 'valentina.ospina@example.com', '$2a$10$clientehash18', '3225566774', 'Cl 77 #12-44, Bogotá'),
+('sergio', 'sergio.herrera@example.com', '$2a$10$clientehash19', '3119988774', 'Cra 60 #22-30, Cartagena'),
+('monica', 'monica.palacios@example.com', '$2a$10$clientehash20', '3156677882', 'Cl 40 #15-10, Cali'),
+('daniel', 'daniel.cortes@example.com', '$2a$10$clientehash21', '3131122334', 'Cra 14 #44-50, Medellín'),
+('luisa', 'luisa.peña@example.com', '$2a$10$clientehash22', '3174455661', 'Cl 11 #50-60, Bogotá'),
+('cristian', 'cristian.guzman@example.com', '$2a$10$clientehash23', '3002211334', 'Cra 33 #21-40, Cali'),
+('diana', 'diana.rivera@example.com', '$2a$10$clientehash24', '3129988771', 'Cl 20 #5-12, Bucaramanga'),
+('nicolas', 'nicolas.leon@example.com', '$2a$10$clientehash25', '3215566771', 'Cra 12 #60-40, Bogotá'),
+('isabel', 'isabel.restrepo@example.com', '$2a$10$clientehash26', '3103344558', 'Cl 33 #70-12, Cali'),
+('hugo', 'hugo.vera@example.com', '$2a$10$clientehash27', '3196677881', 'Cra 88 #11-33, Medellín'),
+('sandra', 'sandra.cardenas@example.com', '$2a$10$clientehash28', '3024455663', 'Cl 50 #30-22, Bogotá'),
+('pedro', 'pedro.salazar@example.com', '$2a$10$clientehash29', '3161122336', 'Cra 5 #77-50, Barranquilla'),
+('yolanda', 'yolanda.morales@example.com', '$2a$10$clientehash30', '3187788991', 'Cl 20 #15-80, Cali'),
+('jorge', 'jorge.castro@example.com', '$2a$10$clientehash31', '3145566778', 'Cra 12 #33-10, Bogotá'),
+('lina', 'lina.murillo@example.com', '$2a$10$clientehash32', '3152233448', 'Cl 66 #10-90, Medellín'),
+('osvaldo', 'osvaldo.niño@example.com', '$2a$10$clientehash33', '3171122336', 'Cra 88 #21-12, Cali'),
+('patricia', 'patricia.beltran@example.com', '$2a$10$clientehash34', '3196677880', 'Cl 15 #44-22, Bogotá'),
+('camilo', 'camilo.gallego@example.com', '$2a$10$clientehash35', '3013344557', 'Cra 10 #33-50, Cartagena'),
+('melisa', 'melisa.forero@example.com', '$2a$10$clientehash36', '3125566778', 'Cl 40 #20-88, Bucaramanga'),
+('roberto', 'roberto.villalba@example.com', '$2a$10$clientehash37', '3107788993', 'Cra 77 #50-33, Bogotá'),
+('natalia', 'natalia.briceno@example.com', '$2a$10$clientehash38', '3202233446', 'Cl 88 #60-21, Cali'),
+('edwin', 'edwin.cuellar@example.com', '$2a$10$clientehash39', '3224455664', 'Cra 15 #20-60, Medellín'),
+('fabiola', 'fabiola.perez@example.com', '$2a$10$clientehash40', '3199988773', 'Cl 99 #12-33, Barranquilla'),
+('andrea', 'andrea.hoyos@example.com', '$2a$10$clientehash41', '3181122337', 'Cra 30 #77-22, Bogotá'),
+('tomas', 'tomas.lizcano@example.com', '$2a$10$clientehash42', '3166677884', 'Cl 55 #90-33, Cali'),
+('karla', 'karla.cardenas@example.com', '$2a$10$clientehash43', '3151122335', 'Cra 60 #14-22, Medellín'),
+('german', 'german.mejia@example.com', '$2a$10$clientehash44', '3174455662', 'Cl 44 #77-10, Bogotá'),
+('susana', 'susana.rojas@example.com', '$2a$10$clientehash45', '3017788994', 'Cra 40 #88-22, Cali'),
+('alex', 'alex.hurtado@example.com', '$2a$10$clientehash46', '3122233445', 'Cl 20 #66-11, Medellín'),
+('marina', 'marina.acevedo@example.com', '$2a$10$clientehash47', '3149988775', 'Cra 22 #14-55, Bogotá'),
+('cesar', 'cesar.quintero@example.com', '$2a$10$clientehash48', '3207788996', 'Cl 99 #22-70, Cartagena');
+
+-- =========================================================
+-- TABLA INTERMEDIA ENTRE Usuario Y Roles 
+-- =========================================================
+INSERT INTO Usuario_Rol (id_usuario, id_rol) VALUES
+(1, 1),
+(2, 1),
+
+-- Mecánicos
+(3, 2),
+(4, 2),
+
+-- Clientes
+(5, 3),
+(6, 3),
+(7, 3),
+(8, 3),
+(9, 3),
+(10, 3),
+(11, 3),
+(12, 3),
+(13, 3),
+(14, 3),
+(15, 3),
+(16, 3),
+(17, 3),
+(18, 3),
+(19, 3),
+(20, 3),
+(21, 3),
+(22, 3),
+(23, 3),
+(24, 3),
+(25, 3),
+(26, 3),
+(27, 3),
+(28, 3),
+(29, 3),
+(30, 3),
+(31, 3),
+(32, 3),
+(33, 3),
+(34, 3),
+(35, 3),
+(36, 3),
+(37, 3),
+(38, 3),
+(39, 3),
+(40, 3),
+(41, 3),
+(42, 3),
+(43, 3),
+(44, 3),
+(45, 3),
+(46, 3),
+(47, 3),
+(48, 3),
+(49, 3),
+(50, 3),
+(51, 3),
+(52, 3);
 
 -- =========================================================
 -- DATOS DE PRUEBA PARA TABLA: Motocicleta
@@ -381,40 +442,67 @@ INSERT INTO Solucion (descripcion, tiempo_estimado, costo_estimado) VALUES
 -- DATOS REALISTAS PARA TABLA: Diagnostico
 -- =========================================================
 
-INSERT INTO Diagnostico (id_moto, id_sintoma, id_falla, id_causa, id_solucion, estado) VALUES
--- Moto no arranca
-(1, 1, 1, 1, 1, 'pendiente'),   -- Bujía en mal estado → Reemplazo de bujía
-(2, 1, 2, 3, 3, 'confirmado'),  -- Carburador sucio → Ajuste y limpieza de carburador
-(3, 1, 3, 11, 9, 'solucionado'), -- Batería descargada → Recarga o reemplazo de batería
+INSERT INTO Diagnostico (id_moto, estado) VALUES
+(1, 'pendiente'),    -- 1
+(2, 'confirmado'),   -- 2
+(3, 'solucionado'),  -- 3
+(4, 'pendiente'),    -- 4
+(5, 'confirmado'),   -- 5
+(6, 'solucionado'),  -- 6
+(7, 'pendiente'),    -- 7
+(8, 'confirmado'),   -- 8
+(9, 'solucionado'),  -- 9
+(10, 'pendiente'),   -- 10
+(11, 'confirmado'),  -- 11
+(12, 'solucionado'), -- 12
+(13, 'pendiente'),   -- 13
+(14, 'confirmado'),  -- 14
+(15, 'solucionado'), -- 15
+(16, 'pendiente'),   -- 16
+(17, 'confirmado'),  -- 17
+(18, 'solucionado'), -- 18
+(19, 'pendiente'),   -- 19
+(20, 'confirmado');  -- 20
 
--- Motor pierde potencia
-(4, 5, 4, 2, 2, 'pendiente'),   -- Filtro de aire obstruido → Limpieza/cambio de filtro
-(5, 5, 5, 5, 4, 'confirmado'),  -- Nivel bajo de aceite → Cambio de aceite
-(6, 5, 6, 8, 6, 'solucionado'), -- Pistón desgastado → Reparación de pistón
+-- =========================================================
+-- DATOS DE PRUEBA PARA TABLAS INTERMEDIAS
+-- =========================================================
 
--- Moto se apaga en marcha
-(7, 8, 7, 14, 12, 'pendiente'), -- Fusible quemado → Cambio de fusible
-(8, 8, 8, 13, 11, 'confirmado'),-- Regulador de voltaje dañado → Reemplazo de regulador
-(9, 8, 9, 19, 17, 'solucionado'), -- ECU con fallo interno → Cambio de ECU
+INSERT INTO Diagnostico_Sintoma (id_diagnostico,id_sintoma) VALUES
+(1, 1), (2, 1), (3, 1),   -- Moto no arranca
+(4, 5), (5, 5), (6, 5),   -- Motor pierde potencia
+(7, 8), (8, 8), (9, 8),   -- Moto se apaga en marcha
+(10, 15), (11, 15), (12, 15), -- Frenos no responden
+(13, 20), (14, 20), (15, 20), -- Vibraciones
+(16, 25), (17, 25), (18, 25), -- Ruidos en motor
+(19, 30), (20, 30);           -- Dirección inestable
 
--- Frenos no responden
-(10, 15, 10, 21, 18, 'pendiente'), -- Pastillas gastadas → Cambio de pastillas
-(11, 15, 11, 24, 20, 'confirmado'), -- Fugas en sistema → Purgado y relleno de frenos
-(12, 15, 12, 26, 23, 'solucionado'), -- ABS defectuoso → Reparación sistema ABS
+INSERT INTO Diagnostico_Falla (id_diagnostico,id_Falla) VALUES
+(1, 1), (2, 2), (3, 3),
+(4, 4), (5, 5), (6, 6),
+(7, 7), (8, 8), (9, 9),
+(10, 10), (11, 11), (12, 12),
+(13, 13), (14, 14), (15, 15),
+(16, 16), (17, 17), (18, 18),
+(19, 19), (20, 20);
 
--- Vibraciones en la moto
-(13, 20, 13, 28, 24, 'pendiente'), -- Llanta con baja presión → Cambio de llanta
-(14, 20, 14, 31, 27, 'confirmado'), -- Desgaste irregular → Alineación de llantas
-(15, 20, 15, 37, 32, 'solucionado'), -- Cadena floja → Reemplazo de kit de arrastre
+INSERT INTO Diagnostico_Causa (id_diagnostico,id_Causa) VALUES
+(1, 1), (2, 3), (3, 11),
+(4, 2), (5, 5), (6, 8),
+(7, 14), (8, 13), (9, 19),
+(10, 21), (11, 24), (12, 26),
+(13, 28), (14, 31), (15, 37),
+(16, 10), (17, 9), (18, 43),
+(19, 34), (20, 41);
 
--- Ruidos en el motor
-(16, 25, 16, 10, 7, 'pendiente'), -- Válvulas mal calibradas → Ajuste de válvulas
-(17, 25, 17, 9, 8, 'confirmado'), -- Cadena distribución floja → Cambio de cadena
-(18, 25, 18, 43, 40, 'solucionado'), -- Fugas escape → Cambio de múltiple de escape
-
--- Dirección inestable
-(19, 30, 19, 34, 30, 'pendiente'), -- Resorte de suspensión vencido → Cambio de resortes
-(20, 30, 20, 41, 36, 'confirmado'); -- Rodamientos dañados → Reparación caja/transmisión
+INSERT INTO Diagnostico_Solucion (id_diagnostico,id_Solucion) VALUES
+(1, 1), (2, 3), (3, 9),
+(4, 2), (5, 4), (6, 6),
+(7, 12), (8, 11), (9, 17),
+(10, 18), (11, 20), (12, 23),
+(13, 24), (14, 27), (15, 32),
+(16, 7), (17, 8), (18, 40),
+(19, 30), (20, 36);
 
 -- =========================================================
 -- DATOS DE PRUEBA PARA TABLA: Regla
