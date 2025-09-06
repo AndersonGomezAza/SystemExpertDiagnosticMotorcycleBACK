@@ -10,7 +10,7 @@ import com.taller.motos.service.DiagnosticoService;
 
 @CrossOrigin(origins = "https://localhost:4200" )
 @RestController
-@RequestMapping("/diagnostico")
+@RequestMapping("/diagnosticos")
 public class DiagnosticoController {
     private final DiagnosticoService diagnosticoService;
 

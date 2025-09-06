@@ -11,7 +11,7 @@ import com.taller.motos.service.MotocicletaService;
 
 @CrossOrigin(origins = "http://localhost:4200")
 @RestController
-@RequestMapping("/motocicleta")
+@RequestMapping("/motocicletas")
 public class MotocicletaController {
     
     private final MotocicletaService motocicletaService;

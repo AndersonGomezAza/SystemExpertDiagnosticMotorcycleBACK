@@ -12,12 +12,12 @@ INSERT INTO Rol (nombre, descripcion) VALUES
 
 INSERT INTO Usuario (nombre_usuario, email, password_hash, telefono, direccion) VALUES
 -- Admins
-('carlos', 'carlos.admin@example.com', '$2a$10$adminhash1', '3001234567', 'Cra 10 #25-30, Bogotá'),
-('laura', 'laura.admin@example.com', '$2a$10$adminhash2', '3109876543', 'Cl 45 #12-50, Medellín'),
+('carlos', 'carlos.admin@example.com', '$2a$10$9Dg6XbEDp3G8Qy7XvsgX9uVYf0SiyR8Mbqp6NbhX9qOEzT9lsd6Uq', '3001234567', 'Cra 10 #25-30, Bogotá'),
+('laura', 'laura.admin@example.com', '$2a$10$6sYzKnD5kpld9o9bbqEnEuhGGLgAibdWWJ8K9gMFX2i4dcpt0KX8a', '3109876543', 'Cl 45 #12-50, Medellín'),
 
 -- Mecánicos
-('juan', 'juan.mecanico@example.com', '$2a$10$mechash1', '3125554433', 'Cl 20 #15-10, Cali'),
-('sandra', 'sandra.mecanico@example.com', '$2a$10$mechash2', '3004442211', 'Cra 30 #40-22, Barranquilla'),
+('juan', 'juan.mecanico@example.com', '$2a$10$d4QnQjVJ2FkBJS.4pUDoN..DckxEx6hMUPI1eB2CNVZ7V9o2MzLPa', '3125554433', 'Cl 20 #15-10, Cali'),
+('sandra', 'sandra.mecanico@example.com', '$2a$10$zT9Up39Q9yLyb3gYBpXhEOBtwk0oK0DQqQMuIouAKDJKhYECWB1vK', '3004442211', 'Cra 30 #40-22, Barranquilla'),
 
 -- Clientes
 ('andres', 'andres.perez@example.com', '$2a$10$clientehash1', '3011234567', 'Cra 15 #20-33, Bogotá'),

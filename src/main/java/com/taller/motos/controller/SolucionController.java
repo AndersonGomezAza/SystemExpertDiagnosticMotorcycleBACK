@@ -14,7 +14,7 @@ import com.taller.motos.service.SolucionService;
 
 @CrossOrigin(origins = "https://localhost:4200")
 @RestController
-@RequestMapping("/solucion")
+@RequestMapping("/soluciones")
 public class SolucionController {
     
     private final SolucionService solucionService;

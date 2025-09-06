@@ -26,7 +26,7 @@ public class Usuario {
     @Column(columnDefinition = "TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
     private java.time.LocalDateTime fecha_registro;
     private java.time.LocalDateTime ultimo_login;
-    @ManyToMany()
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
         name = "usuario_rol",  // usa tu tabla intermedia existente
         joinColumns = @JoinColumn(name = "idUsuario"),

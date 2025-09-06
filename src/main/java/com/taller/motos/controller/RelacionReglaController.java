@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/relacion-regla")
+@RequestMapping("/relacion-reglas")
 public class RelacionReglaController {
 
     private final RelacionReglaService relacionReglaService;

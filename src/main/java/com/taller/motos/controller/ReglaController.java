@@ -12,7 +12,7 @@ import com.taller.motos.service.ReglaService;
 
 @CrossOrigin(origins = "https://localhost:4200")
 @RestController
-@RequestMapping("/regla")
+@RequestMapping("/reglas")
 public class ReglaController {
     private final ReglaService reglaService;
 
