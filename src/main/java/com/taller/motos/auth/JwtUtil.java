@@ -13,7 +13,7 @@ import java.util.Date;
 public class JwtUtil {
 
     // 🔒 Clave secreta fija (cambia esto por algo seguro y largo en producción)
-    private static final String SECRET_STRING = "MiClaveSecretaMuySegura1234567890"; 
+    private static final String SECRET_STRING = "SystemExpertDiagosticMotorcicle192837465*."; 
     private static final Key SECRET_KEY = Keys.hmacShaKeyFor(SECRET_STRING.getBytes(StandardCharsets.UTF_8));
 
     // Tiempo de expiración: 15 minutos
