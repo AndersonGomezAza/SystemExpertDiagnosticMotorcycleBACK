@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.*;
 import com.taller.motos.entity.Diagnostico;
 import com.taller.motos.service.DiagnosticoService;
 
-@CrossOrigin(origins = "https://localhost:4200" )
 @RestController
 @RequestMapping("/diagnosticos")
 public class DiagnosticoController {

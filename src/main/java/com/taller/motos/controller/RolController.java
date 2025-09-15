@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import com.taller.motos.entity.Rol;
 import com.taller.motos.service.RolService;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/roles")
 public class RolController {

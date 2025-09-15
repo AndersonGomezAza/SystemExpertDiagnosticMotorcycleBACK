@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.*;
 import com.taller.motos.entity.Motocicleta;
 import com.taller.motos.service.MotocicletaService;
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/motocicletas")
 public class MotocicletaController {

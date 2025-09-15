@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import com.taller.motos.entity.Regla;
 import com.taller.motos.service.ReglaService;
 
-@CrossOrigin(origins = "https://localhost:4200")
 @RestController
 @RequestMapping("/reglas")
 public class ReglaController {

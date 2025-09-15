@@ -10,7 +10,6 @@ import com.taller.motos.entity.Falla;
 import com.taller.motos.service.FallaService;
 
 
-@CrossOrigin(origins = "https://localhost:4200")
 @RestController
 @RequestMapping("/fallas")
 public class FallaController {

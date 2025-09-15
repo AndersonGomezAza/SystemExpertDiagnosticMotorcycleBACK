@@ -25,20 +25,27 @@ public class JwtFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
-                                    FilterChain filterChain) throws ServletException, IOException {
+                                    FilterChain filterChain)
+                                    throws ServletException, IOException {
 
         String header = request.getHeader("Authorization");
         if (header != null && header.startsWith("Bearer ")) {
             String token = header.substring(7);
             String username = JwtUtil.extractUsername(token);
-            
+
             if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
                 UserDetails userDetails = userDetailsService.loadUserByUsername(username);
                 if (JwtUtil.isTokenValid(token, userDetails.getUsername())) {
-                    System.out.println("Token válido para: " + username + " ? " + JwtUtil.isTokenValid(token, username));
+
+                    // ✅ Autenticar al usuario
                     UsernamePasswordAuthenticationToken auth =
-                            new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+                            new UsernamePasswordAuthenticationToken(
+                                    userDetails, null, userDetails.getAuthorities());
                     SecurityContextHolder.getContext().setAuthentication(auth);
+
+                    // ✅ Renovar el token: nuevo vencimiento desde ahora
+                    String refreshedToken = JwtUtil.generateToken(username);
+                    response.setHeader("Authorization", "Bearer " + refreshedToken);
                 }
             }
         }

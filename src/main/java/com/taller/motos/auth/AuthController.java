@@ -19,7 +19,6 @@ import com.taller.motos.entity.Usuario;
 import com.taller.motos.repository.UsuarioRepository;
 
 
-@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping("/auth")
 public class AuthController {

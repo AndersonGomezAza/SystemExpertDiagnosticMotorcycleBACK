@@ -11,7 +11,6 @@ import com.taller.motos.entity.Causa;
 import com.taller.motos.service.CausaService;
 
 
-@CrossOrigin(origins = "https://localhost:4200")
 @RestController
 @RequestMapping("/causas")
 public class CausaController {

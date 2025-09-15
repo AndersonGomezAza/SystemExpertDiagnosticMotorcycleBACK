@@ -10,9 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import com.taller.motos.entity.Solucion;
 import com.taller.motos.service.SolucionService;
 
-
-
-@CrossOrigin(origins = "https://localhost:4200")
 @RestController
 @RequestMapping("/soluciones")
 public class SolucionController {
